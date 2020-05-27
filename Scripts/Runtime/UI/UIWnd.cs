@@ -2,13 +2,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
-//using XLua;
+using XLua;
 
 namespace CenturyGame.Framework.UI
 {
     public class UIWnd : MonoBehaviour
     {
-        //private LuaTable logicEnv;
+        private LuaTable logicEnv;
         private readonly static string BindMethod = "BindView";
         public readonly static int GroupDepthFactor = 1000;
         public readonly static int DepthFactor = 10;
@@ -53,19 +53,19 @@ namespace CenturyGame.Framework.UI
 
         private void BindLuaScript()
         {
-            //LuaManager luaMgr = FrameworkEntry.GetModule<LuaManager>();
-            //LuaTable scriptEnv = luaMgr.luaEnv.NewTable();
-            //LuaTable meta = luaMgr.luaEnv.NewTable();
-            //meta.Set("__index", luaMgr.luaEnv.Global);
-            //scriptEnv.SetMetaTable(meta);
-            //meta.Dispose();
-            //string luaFileName = string.Concat(UIName + "Logic");
-            //string cmd = string.Concat("require 'ui/", luaFileName, "'");
-            //luaMgr.luaEnv.DoString(cmd, luaFileName, scriptEnv);
-            //logicEnv = scriptEnv.Get<LuaTable>(UIName);
-            ////string bindMethodName = string.Concat(UIName, ".", BindMethod);
-            ////scriptEnv.GetInPath<Action<LuaTable, UIWnd>>(bindMethodName)?.Invoke(logicEnv, this);
-            //logicEnv.Get<Action<LuaTable, UIWnd>>(BindMethod)?.Invoke(logicEnv, this);
+            LuaManager luaMgr = FrameworkEntry.GetModule<LuaManager>();
+            LuaTable scriptEnv = luaMgr.luaEnv.NewTable();
+            LuaTable meta = luaMgr.luaEnv.NewTable();
+            meta.Set("__index", luaMgr.luaEnv.Global);
+            scriptEnv.SetMetaTable(meta);
+            meta.Dispose();
+            string luaFileName = string.Concat(UIName + "Logic");
+            string cmd = string.Concat("require 'ui/", luaFileName, "'");
+            luaMgr.luaEnv.DoString(cmd, luaFileName, scriptEnv);
+            logicEnv = scriptEnv.Get<LuaTable>(UIName);
+            //string bindMethodName = string.Concat(UIName, ".", BindMethod);
+            //scriptEnv.GetInPath<Action<LuaTable, UIWnd>>(bindMethodName)?.Invoke(logicEnv, this);
+            logicEnv.Get<Action<LuaTable, UIWnd>>(BindMethod)?.Invoke(logicEnv, this);
         }
 
         private void OnEnable()

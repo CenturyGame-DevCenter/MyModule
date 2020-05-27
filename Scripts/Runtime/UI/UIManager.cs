@@ -3,7 +3,7 @@ using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-//using XLua;
+using XLua;
 
 namespace CenturyGame.Framework.UI
 {
@@ -26,7 +26,7 @@ namespace CenturyGame.Framework.UI
         public override void Init()
         {
             LuaManager luaMgr = FrameworkEntry.GetModule<LuaManager>();
-            //luaMgr.luaEnv.AddLoader(CustomLuaLoad);
+            luaMgr.luaEnv.AddLoader(CustomLuaLoad);
         }
 
         public override void Update(float elapseTime, float realElapseTime)

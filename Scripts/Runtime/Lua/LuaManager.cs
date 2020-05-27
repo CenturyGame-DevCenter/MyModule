@@ -1,10 +1,10 @@
-﻿//using XLua;
+﻿using XLua;
 
 namespace CenturyGame.Framework
 {
     public class LuaManager : FrameworkModule
     {
-        //internal LuaEnv luaEnv = new LuaEnv();
+        internal LuaEnv luaEnv = new LuaEnv();
 
         static readonly float GCInterval = 10.0f;
         float gcTime;
@@ -18,7 +18,7 @@ namespace CenturyGame.Framework
             gcTime += elapseTime;
             if (gcTime >= GCInterval)
             {
-                //luaEnv.Tick();
+                luaEnv.Tick();
                 gcTime = 0;
             }
         }

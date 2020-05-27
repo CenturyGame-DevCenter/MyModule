@@ -2,9 +2,10 @@
 "name": "com.centurygame.mymodule",
 "displayName": "My Module",
 "description":	"Only Test",
-"version":	"0.0.4",
+"version":	"0.0.5",
 "unity":	"2018.4",
 "license":	"",
 "dependencies":	{
+"com.centurygame.xlua": "1.0.1"
 }
 }
