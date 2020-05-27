@@ -1,3 +1,14 @@
-﻿{
-	"name": "MYModule"
+{
+    "name": "MYModule",
+    "references": [
+        "XLua"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
 }

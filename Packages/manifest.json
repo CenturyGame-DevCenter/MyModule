@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.centurygame.xlua": "https://github.com/CenturyGame-DevCenter/XLua.git#1.0.1",
     "com.unity.ads": "2.0.8",
     "com.unity.analytics": "3.2.2",
     "com.unity.collab-proxy": "1.2.15",
@@ -36,5 +37,11 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
+  },
+  "lock": {
+    "com.centurygame.xlua": {
+      "hash": "970d3bfa5401fa9ab2eeee58c1b3627272a12959",
+      "revision": "1.0.1"
+    }
   }
 }

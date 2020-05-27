@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Collections.Generic;
-//using XLua;
+using XLua;
 
 namespace CenturyGame.Framework.Network
 {
@@ -198,19 +198,19 @@ namespace CenturyGame.Framework.Network
         /// <param name="header"></param>
         /// <param name="postData"></param>
         /// <param name="callback"></param>
-        //public void PostHttpRequest(string url, LuaTable header, byte[] postData, Action<byte[]> callback)
-        //{
-        //    var headerKeys = header.GetKeys();
-        //    var e = headerKeys.GetEnumerator();
-        //    HttpHeads.Clear();
-        //    while (e.MoveNext())
-        //    {
-        //        var key = e.Current.ToString();
-        //        var value = header.Get<string>(key);
-        //        HttpHeads.Add(key, value);
-        //    }
-        //    HttpAgent.Post(url, postData, HttpHeads, callback);
-        //}
+        public void PostHttpRequest(string url, LuaTable header, byte[] postData, Action<byte[]> callback)
+        {
+            var headerKeys = header.GetKeys();
+            var e = headerKeys.GetEnumerator();
+            HttpHeads.Clear();
+            while (e.MoveNext())
+            {
+                var key = e.Current.ToString();
+                var value = header.Get<string>(key);
+                HttpHeads.Add(key, value);
+            }
+            HttpAgent.Post(url, postData, HttpHeads, callback);
+        }
 
         /// <summary>
         /// 发送HttpGet请求(Lua层使用)
@@ -219,29 +219,29 @@ namespace CenturyGame.Framework.Network
         /// <param name="header"></param>
         /// <param name="args"></param>
         /// <param name="callback"></param>
-        //public void GetHttpRequest(string url, LuaTable header, LuaTable args, Action<byte[]> callback)
-        //{
-        //    var headerKeys = header.GetKeys();
-        //    var e = headerKeys.GetEnumerator();
-        //    HttpHeads.Clear();
-        //    while (e.MoveNext())
-        //    {
-        //        var key = e.Current.ToString();
-        //        var value = header.Get<string>(key);
-        //        HttpHeads.Add(key, value);
-        //    }
+        public void GetHttpRequest(string url, LuaTable header, LuaTable args, Action<byte[]> callback)
+        {
+            var headerKeys = header.GetKeys();
+            var e = headerKeys.GetEnumerator();
+            HttpHeads.Clear();
+            while (e.MoveNext())
+            {
+                var key = e.Current.ToString();
+                var value = header.Get<string>(key);
+                HttpHeads.Add(key, value);
+            }
 
-        //    var argKeys = args.GetKeys();
-        //    var e2 = argKeys.GetEnumerator();
-        //    HttpArgs.Clear();
-        //    while (e2.MoveNext())
-        //    {
-        //        var key = e2.Current.ToString();
-        //        var value = args.Get<string>(key);
-        //        HttpArgs.Add(key, value);
-        //    }
-        //    HttpAgent.Get(url, HttpArgs, HttpHeads, callback);
-        //}
+            var argKeys = args.GetKeys();
+            var e2 = argKeys.GetEnumerator();
+            HttpArgs.Clear();
+            while (e2.MoveNext())
+            {
+                var key = e2.Current.ToString();
+                var value = args.Get<string>(key);
+                HttpArgs.Add(key, value);
+            }
+            HttpAgent.Get(url, HttpArgs, HttpHeads, callback);
+        }
 
         private void TrySend()
         {
