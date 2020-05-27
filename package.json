@@ -1,0 +1,10 @@
+{
+"name": "com.centurygame.mymodule",
+"displayName": "My Module",
+"description":	"Only Test",
+"version":	"0.0.1",
+"unity":	"2018.4",
+"license":	"",
+"dependencies":	{
+}
+}
