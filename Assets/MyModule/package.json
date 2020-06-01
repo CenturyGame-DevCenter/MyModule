@@ -2,10 +2,10 @@
 "name": "com.centurygame.mymodule",
 "displayName": "My Module",
 "description":	"Only Test",
-"version":	"0.0.6",
+"version":	"0.0.7",
 "unity":	"2018.4",
 "license":	"",
 "dependencies":	{
-"com.centurygame.xlua": "1.0.1"
+"com.centurygame.xlua": "https://github.com/CenturyGame-DevCenter/XLua.git#1.0.1"
 }
 }
