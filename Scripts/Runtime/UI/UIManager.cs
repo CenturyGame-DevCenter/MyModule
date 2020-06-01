@@ -1,9 +1,6 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using XLua;
 
 namespace CenturyGame.Framework.UI
 {
